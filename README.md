@@ -64,9 +64,8 @@ Three very different model families land within 0.01 macro-F1 of each other. Tha
 ```
 data/       cleaned splits, scaler.json, meta.json, PREPROCESSING.md
 baseline.ipynb
-src/        make_report.py
 results/    baseline_results.csv, confusion_val.csv/.png, rf_importance.csv, error_summary.json
-report/     checkpoint PDF
+report/     baseline PDF (coming soon) final report
 ```
 
 ## Planned experiments
