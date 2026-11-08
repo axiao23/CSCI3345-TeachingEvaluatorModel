@@ -70,9 +70,9 @@ Three very different model families land within 0.01 macro-F1 of each other. Tha
 ## Layout
 
 ```
-data/       cleaned splits, scaler.json, meta.json, PREPROCESSING.md
+processed/       cleaned splits, scaler.json, meta.json, PREPROCESSING.md
 baseline.ipynb
-results/    baseline_results.csv, confusion_val.csv/.png, rf_importance.csv, error_summary.json
+baselinemodel/    baseline_results.csv, baseline.ipynb
 report/     checkpoint PDF (coming soon) final PDF
 ```
 
