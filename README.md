@@ -73,7 +73,7 @@ Three very different model families land within 0.01 macro-F1 of each other. Tha
 processed/       cleaned splits, scaler.json, meta.json, PREPROCESSING.md
 baseline.ipynb
 baselinemodel/    baseline_results.csv, baseline.ipynb
-report/     checkpoint PDF (coming soon) final PDF
+report/     proposal PDF, checkpoint PDF, (coming soon) final PDF
 ```
 
 ## Planned experiments
