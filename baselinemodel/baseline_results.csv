@@ -1,0 +1,9 @@
+model,feature_set,val_macro_f1,val_accuracy,val_qw_kappa,val_mae_levels,test_macro_f1,test_accuracy,test_qw_kappa,test_mae_levels
+Majority class,all 32 features,0.0858,0.273,0.0,1.0093,0.0877,0.2808,0.0,1.0
+Logistic regression,all 32 features,0.7149,0.7,0.9055,0.3005,0.7239,0.7076,0.9036,0.2952
+Random forest,all 32 features,0.7144,0.6967,0.9016,0.3047,0.724,0.7062,0.9027,0.2947
+Hist. gradient boosting,all 32 features,0.7091,0.6912,0.8982,0.3093,0.7146,0.6978,0.8962,0.3045
+Majority class,without overall_interaction_score,0.0858,0.273,0.0,1.0093,0.0877,0.2808,0.0,1.0
+Logistic regression,without overall_interaction_score,0.7156,0.7005,0.9056,0.3,0.7214,0.7053,0.9031,0.2975
+Random forest,without overall_interaction_score,0.7216,0.7047,0.9044,0.2963,0.7308,0.715,0.9048,0.2864
+Hist. gradient boosting,without overall_interaction_score,0.7152,0.6963,0.8981,0.3056,0.7194,0.7048,0.8995,0.2966
