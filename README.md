@@ -1,6 +1,6 @@
 # Predicting teaching interaction quality
 
-Course project, CSCI3345, Fall 2026. Team: 3 (Audrey Xiao, Sydney Luciano, Charles Ross).
+Course project, CSCI3345, Fall 2026. Team: 4 (Audrey Xiao, Sydney Luciano, Charles Ross).
 
 We predict a five-level teaching quality label (Poor, Needs Improvement, Average, Good, Excellent) from classroom interaction measurements, and compare a few model families on a held-out set of teachers.
 
