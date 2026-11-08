@@ -1,12 +1,12 @@
 # Predicting teaching interaction quality
 
-Course project, CSCI 3345, Fall 2026. Team: Audrey, Charlie, Sydney.
+Course project, [course name / number], Fall 2026. Team: [names].
 
 We predict a five-level teaching quality label (Poor, Needs Improvement, Average, Good, Excellent) from classroom interaction measurements, and compare a few model families on a held-out set of teachers.
 
 ## Data
 
-15,000 classroom interaction records from `teaching_interaction_quality_dataset.csv`, 31 measured columns plus the label. There are no missing values or duplicates. The label is ordinal and moderately imbalanced (Average is the largest class at 28%, Poor the smallest at 11%).
+15,000 classroom interaction records from `teaching_interaction_quality_dataset.csv`, 27 measured columns plus the label (32 model features after the five engineered ones are added). There are no missing values or duplicates. The label is ordinal and moderately imbalanced (Average is the largest class at 28%, Poor the smallest at 11%).
 
 Preprocessing is documented in `data/PREPROCESSING.md`. In short:
 
@@ -20,6 +20,14 @@ Preprocessing is documented in `data/PREPROCESSING.md`. In short:
 | train | 10,699 |
 | val   | 2,150 |
 | test  | 2,151 |
+
+Class counts (Poor, Needs Improvement, Average, Good, Excellent):
+
+| split | Poor | Needs Impr. | Average | Good | Excellent |
+|-------|------|-------------|---------|------|-----------|
+| train | 1,159 | 1,918 | 3,009 | 2,783 | 1,830 |
+| val   | 256 | 385 | 587 | 571 | 351 |
+| test  | 235 | 397 | 604 | 546 | 369 |
 
 The CSVs in `data/` are the cleaned, unscaled versions. Scaling happens inside each model pipeline and is fit on train only. `scaler.json` is kept for reference.
 
@@ -38,7 +46,7 @@ jupyter notebook baseline.ipynb
 
 Open the notebook from the repo root and run all cells.
 
-Python 3.11, scikit-learn 1.9.1, pandas 3.0.5, seed 42. Running all cells takes under a minute on a laptop CPU and writes everything in `results/`.
+Python 3.13, scikit-learn 1.9.1, pandas 3.0.5, seed 42. Running all cells takes under a minute on a laptop CPU and writes everything in `results/`.
 
 ## Baseline results
 
@@ -55,7 +63,7 @@ Logistic regression and random forest use balanced class weights. Everything els
 
 ## Where the baseline fails
 
-About 70% of validation predictions are exact and almost all of the rest (30.0%) are off by one level. Only 3 of 2,150 are off by two or more. The confusion matrix (`results/confusion_val.png`) shows the three middle classes are the weakest (F1 around 0.66) while Poor and Excellent are easier (0.81 and 0.79). The classes look like cut points on a continuous quality score, so records near a boundary are close to a coin flip for every model we have tried.
+About 70% of validation predictions are exact and almost all of the rest (30.0%) are off by one level. Only 3 of 2,150 are off by two or more. The confusion matrix (`results/confusion_val.png`) shows the three middle classes (Needs Improvement, Average, Good) are the weakest (F1 around 0.66) while Poor and Excellent are easier (0.81 and 0.79). The classes look like cut points on a continuous quality score, so records near a boundary are close to a coin flip for every model we have tried.
 
 Three very different model families land within 0.01 macro-F1 of each other. That points to the ceiling coming from the data rather than the model, so we expect tuning to give small gains and plan to say so plainly in the final report.
 
@@ -65,7 +73,7 @@ Three very different model families land within 0.01 macro-F1 of each other. Tha
 data/       cleaned splits, scaler.json, meta.json, PREPROCESSING.md
 baseline.ipynb
 results/    baseline_results.csv, confusion_val.csv/.png, rf_importance.csv, error_summary.json
-report/     baseline PDF (coming soon) final report
+report/     checkpoint PDF (coming soon) final PDF
 ```
 
 ## Planned experiments
