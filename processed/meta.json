@@ -1,0 +1,77 @@
+{
+  "source": "data/raw/extract/teaching_interaction_quality_dataset.csv",
+  "target": "teaching_quality_class",
+  "task": "classification",
+  "seed": 42,
+  "rows_raw": 15000,
+  "rows_clean": 15000,
+  "features": [
+    "interaction_sequence",
+    "session_duration_min",
+    "teacher_speaking_ratio",
+    "teacher_explanation_duration",
+    "teacher_question_count",
+    "teacher_feedback_frequency",
+    "teacher_feedback_score",
+    "student_participation_rate",
+    "student_response_frequency",
+    "student_response_time",
+    "question_answer_interactions",
+    "peer_interaction_frequency",
+    "student_engagement_level",
+    "attention_score",
+    "classroom_communication_score",
+    "interaction_intensity",
+    "discussion_duration_min",
+    "collaborative_activity_score",
+    "attendance_rate",
+    "learning_activity_count",
+    "learning_material_access",
+    "behavioral_event_count",
+    "positive_behavior_ratio",
+    "classroom_noise_level",
+    "interaction_consistency_score",
+    "contextual_engagement_score",
+    "overall_interaction_score",
+    "explanation_share",
+    "discussion_share",
+    "questions_per_min",
+    "student_responses_per_min",
+    "feedback_per_question"
+  ],
+  "split_sizes": {
+    "train": 10699,
+    "val": 2150,
+    "test": 2151
+  },
+  "group_column": "teacher_id",
+  "groups_per_split": {
+    "train": 143,
+    "val": 28,
+    "test": 29
+  },
+  "dropped_columns": [
+    "interaction_id",
+    "session_id",
+    "class_id"
+  ],
+  "fixes": {
+    "capped_teacher_explanation_duration_to_session_length": 21,
+    "capped_discussion_duration_min_to_session_length": 5,
+    "engineered_features": [
+      "explanation_share",
+      "discussion_share",
+      "questions_per_min",
+      "student_responses_per_min",
+      "feedback_per_question"
+    ]
+  },
+  "missing_by_column": {},
+  "class_counts": {
+    "Average": 4200,
+    "Good": 3900,
+    "Needs Improvement": 2700,
+    "Excellent": 2550,
+    "Poor": 1650
+  }
+}
