@@ -79,7 +79,6 @@ report/     ML Project Proposal PDF, ML Baseline Checkpoint PDF, (coming soon) f
 ## Planned experiments
 
 1. Tune logistic regression, random forest and gradient boosting with grouped cross-validation on train. This needs teacher ids, which the cleaned CSVs no longer carry, so we will add them back from the raw file.
-2. Add an ordinal approach (regression on the label level with tuned thresholds) and compare against the classifiers.
 3. Small MLP as a neural baseline.
-4. Feature ablation, mainly with and without `overall_interaction_score`, which is a composite of other columns and the strongest single predictor.
+4. Implement fine tuning of models including feature importance, regression error minimizing etc. 
 5. Final comparison on test, once, with the tuned configurations.
